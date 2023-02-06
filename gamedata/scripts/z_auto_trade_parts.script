@@ -28,13 +28,6 @@ function is_right_key(key)
 	return key == config.trade_key
 end
 
-local condition_map = {
-	good = "good",
-	sellable = "sellable",
-	trash = "trash",
-	wrong_base = "wrong_base"
-}
-
 function collect_items(actor)
 	local item_table = {}
 	local function iterate(npc, item)
