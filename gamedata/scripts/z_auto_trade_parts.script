@@ -1,0 +1,79 @@
+-- Auto Trade Parts
+-- Author: iTheon
+-- License: MIT
+
+local function load_defaults()
+	local t = {}
+	local op = auto_trade_parts_mcm.op
+	for _, v in ipairs(op.gr) do
+		if v.def ~= nil then
+			t[v.id] = v.def
+		end
+	end
+	return t
+end
+-- Default config
+config = load_defaults()
+
+local function load_settings()
+	config = load_defaults()
+	if ui_mcm then
+		for k, _ in pairs(config) do
+			config[k] = ui_mcm.get("auto_trade_parts/" .. k)
+		end
+	end
+end
+
+function is_right_key(key)
+	return key == config.trade_key
+end
+
+function collect_items(actor)
+	local item_table = {}
+	local function iterate(npc, item)
+		local id = item:id()
+		item_table[id] = item
+	end
+
+	actor:iterate_inventory(iterate, actor)
+	return item_table
+end
+
+function handle_trade_and_donate(key)
+	if not is_right_key(key) then return end
+	local last_mode = actor_menu.get_last_mode()
+	-- Exit if not in trade mode
+	if last_mode ~= 2 then return end
+
+	local collected_items = collect_items(db.actor)
+	for _, v in pairs(collected_items) do
+		handle_parts(v)
+	end
+end
+
+function handle_parts(obj)
+	local good_treshold
+	if string.find(obj:section(), "prt_o_") then
+		good_treshold = config.armor_part_usable_treshold
+	elseif string.find(obj:section(), "prt_w_") then
+		good_treshold = config.weapon_part_usable_treshold
+	else
+		return -- Not a part
+	end
+	
+	local condition = obj:condition() * 100;
+	if condition >= good_treshold then
+		-- Leave
+	elseif condition > config.trash_treshold then
+		ui_inventory.GUI:Action_Move(obj, "actor_trade_bag")
+	else
+		ui_inventory.GUI:Action_Donate(obj, "actor_trade_bag")
+	end	
+end
+
+function on_game_start()
+	RegisterScriptCallback("on_key_press", handle_trade_and_donate)
+
+	RegisterScriptCallback("on_game_load", load_settings)
+	RegisterScriptCallback("on_option_change", load_settings)
+end
