@@ -27,6 +27,9 @@
 	<string id="ui_mcm_auto_trade_parts_part_description">
 		<text>Certain mods alter the minimum condition at which the part can be repaired or sold, so there's no universal way of managing parts, but below you can configure "tresholds". Parts above "usable treshold" will stay in your inventory. Parts between "usable treshold" and "trash treshold" will be move to trade window. Parts below "trash treshold" will automatically be donated. The part condition is "tested" against those tresholds in "Usable -> Sellable -> Trash" order and it's done only once, meaning that if your tresholds are overlapping, the first matching treshold will be applied for a given part following the mentioned order.</text>
 	</string>
+	<string id="ui_mcm_auto_trade_parts_recipe_material_check">
+		<text>Preserve parts used in crafting recipes</text>
+	</string>
 	<string id="ui_mcm_auto_trade_parts_weapon_part_usable_treshold">
 		<text>Usable weapon part treshold</text>
 	</string>
