@@ -4,7 +4,8 @@ config = {
 
     armor_part_usable_treshold = 50,
     weapon_part_usable_treshold = 60,
-    trash_treshold = 1
+    trash_treshold = 1,
+	recipe_material_check = true
 }
 
 op = {
@@ -17,6 +18,7 @@ op = {
 
         {id = "part_title", type = "desc", clr = {200, 200, 255, 200}, text="ui_mcm_auto_trade_parts_part_title"},
 		{id = "part_description", type = "desc", text="ui_mcm_auto_trade_parts_part_description"},
+		{id = "recipe_material_check", type = "check", val = 1, def = config.recipe_material_check},
         {id = "weapon_part_usable_treshold", type = "track", val = 2, min = 0, max = 100, step = 1, def = config.weapon_part_usable_treshold},
         {id = "armor_part_usable_treshold", type = "track", val = 2, min = 0, max = 100, step = 1, def = config.armor_part_usable_treshold},
         {id = "trash_treshold", type = "track", val = 2, min = 0, max = 100, step = 1, def = config.trash_treshold}

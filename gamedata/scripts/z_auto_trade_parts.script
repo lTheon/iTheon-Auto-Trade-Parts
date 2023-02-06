@@ -61,8 +61,11 @@ function handle_parts(obj)
 		return -- Not a part
 	end
 	
+	local is_recipe_material = craft_use_in_tooltip_mcm and is_not_empty(craft_use_in_tooltip_mcm.getCraftableItems(obj:section()))
+
+
 	local condition = obj:condition() * 100;
-	if condition >= good_treshold then
+	if condition >= good_treshold or (config.recipe_material_check and is_recipe_material) then
 		-- Leave
 	elseif condition > config.trash_treshold then
 		ui_inventory.GUI:Action_Move(obj, "actor_trade_bag")
