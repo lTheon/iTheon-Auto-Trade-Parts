@@ -1,2 +1,2 @@
-# iTheon's Auto Trade Parts
+# iTheon's Auto Trade Parts v0.1
 This mod's aiming to facilitate selling weapon/armor parts that can't be repaired and donate parts that can't be repaired. The condition tresholds for those actions are fully configurable by user. User also has the ability to always preserve parts that are a part of crafting recipe. To make it work properly, you need another mod (it's cool - you should use it anyway) - https://www.moddb.com/mods/stalker-anomaly/addons/crafting-info-in-tooltips
