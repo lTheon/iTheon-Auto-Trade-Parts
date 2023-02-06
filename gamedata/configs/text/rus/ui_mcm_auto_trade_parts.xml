@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<string_table>	
+	<string id="ui_mcm_menu_auto_trade_parts">
+		<text>Auto Trade Parts</text>
+	</string>
+    <string id="ui_mcm_auto_trade_parts_banner">
+		<text>Auto Trade Parts</text>
+	</string>
+	<string id="ui_mcm_auto_trade_parts_base_description">
+		<text>Configure what weapon/outfit parts you'd like to automatically sell/donate on key press based on their condition. To quickly manage weapon attachments, misc items or basically any other items in a similar manner that do not require condition check, use "Mark junk" feature of RavenAscendant's SortingPlus mod that will automatically move marked items to trading window.</text>
+	</string>
+
+	<string id="ui_mcm_auto_trade_parts_trade_key_title">
+		<text>Key binding</text>
+	</string>
+	<string id="ui_mcm_auto_trade_parts_trade_key_description">
+		<text>Some mods are blocking certain key events on inventory UI. It is advised to not change the binding below, as Left Alt should never be blocked.</text>
+	</string>
+	<string id="ui_mcm_auto_trade_parts_trade_key">
+		<text>Trade key</text>
+	</string>
+
+	<string id="ui_mcm_auto_trade_parts_part_title">
+		<text>Part condition settings</text>
+	</string>
+	<string id="ui_mcm_auto_trade_parts_part_description">
+		<text>Certain mods alter the minimum condition at which the part can be repaired or sold, so there's no universal way of managing parts, but below you can configure "tresholds". Parts above "usable treshold" will stay in your inventory. Parts between "usable treshold" and "trash treshold" will be move to trade window. Parts below "trash treshold" will automatically be donated. The part condition is "tested" against those tresholds in "Usable -> Sellable -> Trash" order and it's done only once, meaning that if your tresholds are overlapping, the first matching treshold will be applied for a given part following the mentioned order.</text>
+	</string>
+	<string id="ui_mcm_auto_trade_parts_weapon_part_usable_treshold">
+		<text>Usable weapon part treshold</text>
+	</string>
+    <string id="ui_mcm_auto_trade_parts_armor_part_usable_treshold">
+		<text>Usable outfit part treshold</text>
+	</string>
+    <string id="ui_mcm_auto_trade_parts_trash_treshold">
+		<text>Trash part treshold</text>
+	</string>
+</string_table>
